@@ -14,16 +14,22 @@ plugins {
 }
 
 android {
-    namespace = "com.aktech.ardrawing"
+    namespace = "com.tuananh.traceart"
     compileSdk = 36
 
     defaultConfig {
-        applicationId = "com.aktech.ardrawing"
+        applicationId = "com.tuananh.traceart"
         minSdk = 24
         targetSdk = 36
         versionCode = 3
         versionName = "1.3"
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    packaging {
+        resources {
+            excludes += "META-INF/versions/9/OSGI-INF/MANIFEST.MF"
+        }
     }
 
     flavorDimensions += "env"

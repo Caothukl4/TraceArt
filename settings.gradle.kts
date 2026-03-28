@@ -20,5 +20,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ARDrawing"
+rootProject.name = "TraceArt"
 include(":app")
