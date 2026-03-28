@@ -1,0 +1,37 @@
+{
+  "version": 3,
+  "artifactType": {
+    "type": "APK",
+    "kind": "Directory"
+  },
+  "applicationId": "com.bookecho.scan2hear",
+  "variantName": "productRelease",
+  "elements": [
+    {
+      "type": "SINGLE",
+      "filters": [],
+      "attributes": [],
+      "versionCode": 26,
+      "versionName": "1.4.20",
+      "outputFile": "scan2hear_product_1.4.20_20250925.144536.apk"
+    }
+  ],
+  "elementType": "File",
+  "baselineProfiles": [
+    {
+      "minApi": 28,
+      "maxApi": 30,
+      "baselineProfiles": [
+        "baselineProfiles/1/scan2hear_product_1.4.20_20250925.144536.dm"
+      ]
+    },
+    {
+      "minApi": 31,
+      "maxApi": 2147483647,
+      "baselineProfiles": [
+        "baselineProfiles/0/scan2hear_product_1.4.20_20250925.144536.dm"
+      ]
+    }
+  ],
+  "minSdkVersionForDexing": 24
+}

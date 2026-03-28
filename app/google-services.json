@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "124599212489",
+    "project_id": "book2voice-app",
+    "storage_bucket": "book2voice-app.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:124599212489:android:c2c0b99bf415235bdf3018",
+        "android_client_info": {
+          "package_name": "com.aktech.ardrawing"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqMFC2NfFgcefSE5ttjERyPAz85fUYafU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

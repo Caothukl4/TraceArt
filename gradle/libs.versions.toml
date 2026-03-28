@@ -1,0 +1,171 @@
+[versions]
+agp = "8.10.0"
+kotlin = "2.2.21"
+googleService = "4.4.4"
+# AndroidX & Compose
+coreKtx = "1.17.0"
+lifecycleRuntimeKtx = "2.9.4"
+activityCompose = "1.11.0"     # theo AndroidX activity stable đến 18 Jun 2025 :contentReference[oaicite:1]{index=1}
+composeBom = "2025.10.01"      # tương ứng Compose UI 1.8 :contentReference[oaicite:2]{index=2}
+material3 = "1.4.0"
+material = "1.7.8"
+nav = "2.9.5"                  # Navigation Compose stable 26 Feb 2025 :contentReference[oaicite:3]{index=3}
+datastore = "1.1.7"
+roomVersion = "2.8.3"
+constraintlayoutVersion = "2.2.1"
+materialVersion = "1.13.0"
+
+
+# Test
+junit = "4.13.2"
+junitVersion = "1.3.0"
+espressoCore = "3.7.0"
+
+# Firebase
+firebaseBom = "34.5.0"
+
+# Hilt
+hilt = "2.57.2"
+hiltNav = "1.3.0"              # Navigation Compose Hilt integration stable :contentReference[oaicite:4]{index=4}
+
+# Retrofit & OkHttp
+retrofit = "3.0.0"
+okhttp = "5.3.0"
+
+# Google Play Services
+playServicesAuth = "21.4.0"
+playServicesAds = "24.7.0"
+
+# CameraX
+cameraX = "1.5.1"
+
+# Media3
+media3 = "1.8.0"
+
+# uCrop
+ucrop = "2.2.11"
+
+#
+ioCoil = "3.3.0"
+
+# Coroutine
+coroutines = "1.9.0"
+
+appcompat = "1.7.1"
+exifinterface = "1.4.1"
+
+# MLKit
+mlkitVersion = '16.0.1'
+
+# pagecurl
+pagecurl= '1.5.1'
+
+# Play Review
+playerview = '2.0.2'
+
+#jtokkit
+jtokkit = '1.1.0'
+
+[libraries]
+appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycleRuntimeKtx" }
+androidx-activity-compose = { group = "androidx.activity", name = "activity-compose", version.ref = "activityCompose" }
+
+androidx-compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "composeBom" }
+androidx-ui = { group = "androidx.compose.ui", name = "ui" }
+androidx-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+androidx-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+androidx-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+androidx-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+androidx-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+androidx-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+androidx-material-icons-extended = {group = "androidx.compose.material", name = "material-icons-extended", version.ref = "material"}
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "nav" }
+androidx-datastore = { group = "androidx.datastore", name = "datastore-preferences", version.ref = "datastore" }
+
+androidx-constraintlayout = {group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayoutVersion" }
+#androidx-adcardview = {group = "androidx.cardview", name = "cardview", version.ref = "cardviewVersion"}
+android-material = { group = "com.google.android.material", name = "material", version.ref = "materialVersion" }
+
+firebase-bom = { group = "com.google.firebase", name = "firebase-bom", version.ref = "firebaseBom" }
+firebase-auth = { group = "com.google.firebase", name = "firebase-auth" }
+firebase-firestore = { group = "com.google.firebase", name = "firebase-firestore" }
+firebase-analytics = { group = "com.google.firebase", name = "firebase-analytics" }
+firebase-messaging = { group = "com.google.firebase", name = "firebase-messaging" }
+firebase-functions = { group = "com.google.firebase", name = "firebase-functions" }
+firebase-crashlytics = { group = "com.google.firebase", name = "firebase-crashlytics" }
+firebase-storage = { group = "com.google.firebase", name = "firebase-storage" }
+firebase-remoteconfig = { group = "com.google.firebase", name = "firebase-config" }
+firebase-appcheck = { group = "com.google.firebase", name = "firebase-appcheck" }
+firebase-appcheck-playintegrity = { group = "com.google.firebase", name = "firebase-appcheck-playintegrity" }
+firebase-appcheck-debug = { group = "com.google.firebase", name = "firebase-appcheck-debug" }
+
+playservices-auth = { group = "com.google.android.gms", name = "play-services-auth", version.ref = "playServicesAuth" }
+playservices-ads = { group = "com.google.android.gms", name = "play-services-ads", version.ref = "playServicesAds" }
+
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hiltNav" }
+
+retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+converter-gson = { group = "com.squareup.retrofit2", name = "converter-gson", version.ref = "retrofit" }
+okhttp = { group = "com.squareup.okhttp3", name = "okhttp", version.ref = "okhttp" }
+logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+#kotlinx-coroutines-android = { group = "org.jetbrains.kotlinx", name = "kotlinx-coroutines-android", version.ref = "coroutines" }
+kotlinx-serialization-json = { group = "org.jetbrains.kotlinx", name = "kotlinx-serialization-json", version.ref = "coroutines" }
+
+camerax-core = { group = "androidx.camera", name = "camera-core", version.ref = "cameraX" }
+camerax-camera2 = { group = "androidx.camera", name = "camera-camera2", version.ref = "cameraX" }
+camerax-lifecycle = { group = "androidx.camera", name = "camera-lifecycle", version.ref = "cameraX" }
+camerax-view = { group = "androidx.camera", name = "camera-view", version.ref = "cameraX" }
+
+media3-exoplayer = { group = "androidx.media3", name = "media3-exoplayer", version.ref = "media3" }
+media3-session = { group = "androidx.media3", name = "media3-session", version.ref = "media3" }
+media3-ui = { group = "androidx.media3", name = "media3-ui", version.ref = "media3" }
+media3-datasource = { group = "androidx.media3", name = "media3-datasource", version.ref = "media3" }
+media3-datasource-okhttp = { group = "androidx.media3", name = "media3-datasource-okhttp", version.ref = "media3" }
+
+ucrop = { group = "com.github.yalantis", name = "ucrop", version.ref = "ucrop" }
+
+coil-compose = { group = "io.coil-kt.coil3", name = "coil-compose", version.ref = "ioCoil" }
+coil-network-okhttp = { group = "io.coil-kt.coil3", name = "coil-network-okhttp", version.ref = "ioCoil" }
+
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "roomVersion" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "roomVersion" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "roomVersion" }
+
+kotlin-reflect = { group = "org.jetbrains.kotlin", name = "kotlin-reflect", version.ref = "kotlin" }
+
+#MLKit
+mlkit-text-recognition = { group = "com.google.mlkit", name = "text-recognition", version.ref = "mlkitVersion" }
+mlkit-text-recognition-chinese = { group = "com.google.mlkit", name = "text-recognition-chinese", version.ref = "mlkitVersion" }
+mlkit-text-recognition-devanagari = { group = "com.google.mlkit", name = "text-recognition-devanagari", version.ref = "mlkitVersion" }
+mlkit-text-recognition-japanese = { group = "com.google.mlkit", name = "text-recognition-japanese", version.ref = "mlkitVersion" }
+mlkit-text-recognition-korean = { group = "com.google.mlkit", name = "text-recognition-korean", version.ref = "mlkitVersion" }
+
+#PageCurl
+pagecurl = { group = "io.github.oleksandrbalan", name = "pagecurl", version.ref = "pagecurl" }
+
+#Play Review
+play-review = { group = "com.google.android.play", name = "review", version.ref = "playerview" }
+play-review-ktx = { group = "com.google.android.play", name = "review-ktx", version.ref = "playerview" }
+play-review-testing = { group = "com.google.android.play", name = "review-testing", version.ref = "playerview" }
+
+#jtokkit
+jtokkit = { group = "com.knuddels", name = "jtokkit", version.ref = "jtokkit" }
+
+# Test
+junit = { group = "junit", name = "junit", version.ref = "junit" }
+androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
+androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
+androidx-exifinterface = { group = "androidx.exifinterface", name = "exifinterface", version.ref = "exifinterface" }
+
+[plugins]
+android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
+kotlin-compose = { id = "org.jetbrains.kotlin.plugin.compose", version.ref = "kotlin" }
+google-service =  { id = "com.google.gms.google-services", version.ref = "googleService" }
+
+

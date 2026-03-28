@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<paths xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Cho phép truy cập thư mục cache -->
+    <cache-path
+        name="camera_cache"
+        path="." />
+
+    <!-- Nếu bạn muốn lưu ảnh trong files/ -->
+    <files-path
+        name="camera_files"
+        path="." />
+</paths>
