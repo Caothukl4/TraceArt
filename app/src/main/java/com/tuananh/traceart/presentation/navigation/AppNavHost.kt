@@ -11,37 +11,30 @@ import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import com.tuananh.traceart.domain.model.Book
+import androidx.navigation.NavType
+import androidx.navigation.navArgument
+import com.tuananh.traceart.presentation.screen.drawing.DrawingScreen
+import com.tuananh.traceart.presentation.screen.home.HomeScreen
 import com.tuananh.traceart.presentation.screen.language.ChooseLanguageScreen
 import com.tuananh.traceart.presentation.screen.onboarding.OnboardingScreen
+import com.tuananh.traceart.presentation.screen.result.ResultScreen
 import com.tuananh.traceart.presentation.screen.splash.SplashScreen
 
 object Routes {
     const val SPLASH = "SplashScreen"
     const val MAIN = "MainTabNav"
-    const val SCAN_BOOK = "ScanBookScreen"
-    const val SCAN_BOOK_WITH_ID = "$SCAN_BOOK?bookId={bookId}"
-    const val BOOK_DETAIL = "BookDetailScreen"
-    const val BOOK_DETAIL_BY_ID = "$BOOK_DETAIL/{bookId}"
-    const val PAGE_DETAIL = "PageDetailScreen"
-    const val CHOOSE_VOICE = "ChooseVoiceScreen"
-    const val CHOOSE_LANGUAGE = "ChooseLanguageScreen"
-    const val BOOK_DETAIL_GRAPH = "book_detail_graph"
     const val HOME = "HomeScreen"
+    const val DRAWING = "DrawingScreen"
+    const val RESULT = "ResultScreen"
     const val SETTING = "SettingScreen"
     const val ONBOARDING = "OnboardingScreen"
-
-    data class BookDetail(
-        val bookId: String,
-        val book: Book? = null,
-    )
-
-    fun bookDetailById(bookId: String): String {
-        return buildString {
-            append("$BOOK_DETAIL/$bookId")
-        }
-    }
-
-    fun scanBookWithId(bookId: String): String = "$SCAN_BOOK?bookId=$bookId"
+    const val CHOOSE_LANGUAGE = "ChooseLanguageScreen"
+    // Helper to pass image uri to drawing screen
+    fun drawing(imageUri: String) = "$DRAWING?imageUri=$imageUri"
+    const val DRAW_WITH_URI = "$DRAWING?imageUri={imageUri}"
+    
+    fun result(score: Int) = "$RESULT?score=$score"
+    const val RESULT_WITH_SCORE = "$RESULT?score={score}"
 }
 
 @Composable
@@ -88,5 +81,24 @@ fun AppNavHost(navController: NavHostController) {
         composable(Routes.ONBOARDING) { OnboardingScreen() }
         composable(Routes.CHOOSE_LANGUAGE) { ChooseLanguageScreen() }
         composable(Routes.MAIN) { MainTabNav(navController) }
+        composable(Routes.HOME) { HomeScreen() }
+        composable(
+            route = Routes.DRAW_WITH_URI,
+            arguments = listOf(
+                navArgument("imageUri") { type = NavType.StringType }
+            )
+        ) { backStackEntry ->
+            val imageUri = backStackEntry.arguments?.getString("imageUri") ?: ""
+            DrawingScreen(imageUri = imageUri)
+        }
+        composable(
+            route = Routes.RESULT_WITH_SCORE,
+            arguments = listOf(
+                navArgument("score") { type = NavType.IntType }
+            )
+        ) { backStackEntry ->
+            val score = backStackEntry.arguments?.getInt("score") ?: 0
+            ResultScreen(score = score)
+        }
     }
 }

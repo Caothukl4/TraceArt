@@ -54,37 +54,37 @@ fun <T> NavHostController.getParamsFromBack(
     }
 }
 
-fun NavHostController.navigateWith(route: String, params: Any? = null, forceNewScreen: Boolean? = false) {
-//    val exists = runCatching { getBackStackEntry(route) }.isSuccess
-    val prefix = route.substringBefore("/") // ví dụ: "book_detail"
-
-    val baseRoute = when (prefix) {
-        Routes.BOOK_DETAIL -> Routes.BOOK_DETAIL_BY_ID
-        Routes.SCAN_BOOK -> Routes.SCAN_BOOK
-        else -> null
-    }
-    val exists = baseRoute?.let {
-        runCatching { getBackStackEntry(it) }.isSuccess
-    } ?: false
-
-    if (exists && (forceNewScreen == null || !forceNewScreen)) {
-        baseRoute?.let {
-            getBackStackEntry(it).savedStateHandle["back_params"] = params
-        }
-        // Nếu route đã có trong stack thì remove màn hiện tại
-        popBackStack()
-        navigate(route) {
-            launchSingleTop = true
-        }
-    } else {
-        currentBackStackEntry?.savedStateHandle?.set("params", params)
-
-        // Nếu chưa có thì push bình thường
-        navigate(route) {
-            launchSingleTop = true
-        }
-    }
-}
+//fun NavHostController.navigateWith(route: String, params: Any? = null, forceNewScreen: Boolean? = false) {
+////    val exists = runCatching { getBackStackEntry(route) }.isSuccess
+//    val prefix = route.substringBefore("/") // ví dụ: "book_detail"
+//
+//    val baseRoute = when (prefix) {
+////        Routes.BOOK_DETAIL -> Routes.BOOK_DETAIL_BY_ID
+////        Routes.SCAN_BOOK -> Routes.SCAN_BOOK
+//        else -> null
+//    }
+//    val exists = baseRoute?.let {
+//        runCatching { getBackStackEntry(it) }.isSuccess
+//    } ?: false
+//
+//    if (exists && (forceNewScreen == null || !forceNewScreen)) {
+//        baseRoute?.let {
+//            getBackStackEntry(it).savedStateHandle["back_params"] = params
+//        }
+//        // Nếu route đã có trong stack thì remove màn hiện tại
+//        popBackStack()
+//        navigate(route) {
+//            launchSingleTop = true
+//        }
+//    } else {
+//        currentBackStackEntry?.savedStateHandle?.set("params", params)
+//
+//        // Nếu chưa có thì push bình thường
+//        navigate(route) {
+//            launchSingleTop = true
+//        }
+//    }
+//}
 
 //@Composable
 //inline fun <reified T> NavHostController.getParams(

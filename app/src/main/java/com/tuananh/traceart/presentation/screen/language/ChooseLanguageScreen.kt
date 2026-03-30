@@ -60,7 +60,7 @@ fun ChooseLanguageScreen() {
             if (selectedLanguage.value != null) {
                 chooseLanguageViewModel.saveLanguage(selectedLanguage.value!!)
                 chooseLanguageViewModel.resetLanguage(selectedLanguage.value!!, activity)
-                navController.navigate(Routes.CHOOSE_VOICE)
+                navController.navigate(Routes.HOME)
             }
         }
     }
